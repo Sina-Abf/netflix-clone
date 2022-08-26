@@ -1,5 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import { AuthContextProvider } from './context/AuthContext';
 import Home from './pages/Home';
 
 function App() {
