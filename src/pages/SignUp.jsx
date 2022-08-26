@@ -5,6 +5,7 @@ import { UserAuth } from '../context/AuthContext';
 const SignUp = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(false);
   const { user, signUp } = UserAuth();
   const navigate = useNavigate();
 
@@ -12,9 +13,12 @@ const SignUp = () => {
     e.preventDefault();
 
     try {
+      setLoading(true);
       await signUp(email, password);
+      setLoading(false);
       navigate('/');
     } catch (err) {
+      setLoading(false);
       console.log(err);
     }
   };

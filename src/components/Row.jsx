@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Movie from './Movie';
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
+import requests from '../Requests';
 
 const Row = ({ title, fetchURL, rowId }) => {
   const [movies, setMovies] = useState([]);
