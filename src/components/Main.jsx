@@ -10,6 +10,7 @@ const Main = () => {
   useEffect(() => {
     axios.get(requests.requestPopular).then((res) => {
       setMovies(res.data.results);
+      console.log(res.data.results);
     });
   }, []);
 
